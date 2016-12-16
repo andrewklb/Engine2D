@@ -49,8 +49,7 @@ public class Entity {
         x += xxv * i / xSteps;
         break;
       } else {
-        //xv = 0.0;
-        xv *= 0.1;
+        xv = 0.0;
       }
     }
 

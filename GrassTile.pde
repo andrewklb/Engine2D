@@ -1,5 +1,5 @@
-public class SolidTile extends Tile {
-  public SolidTile() {
+public class GrassTile extends Tile {
+  public GrassTile() {
     solidRender = true;
     blocksMotion = true;
     tex = 0;

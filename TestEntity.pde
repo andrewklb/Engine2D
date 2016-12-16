@@ -4,8 +4,8 @@ public class TestEntity extends Entity {
   public TestEntity(float x, float y) {
     this.x = x;
     this.y = y;
-    this.w = random(0.1,3.0);
-    this.h = random(0.1,3.0);
+    this.w = random(0.9,0.99);
+    this.h = random(0.9,0.99);
     //this.w = 2.0;
     //this.h = 2.0;
     this.xv = 0.0;

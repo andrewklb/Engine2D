@@ -63,6 +63,9 @@ public class Level {
   
   public Tile decodeTile(color col) {
     if(col == #000000) return new SolidTile();
+    if(col == #0BD900) return new GrassTile();
+    if(col == #875438) return new DirtTile();
+    if(col == #808080) return new SnowTile();
     return airTile;
   }
   
@@ -74,7 +77,7 @@ public class Level {
 
   public void update() {
     //time = game.time;
-
+    
     for (int i = 0; i < entities.size(); i++) {
       Entity e = entities.get(i);
       e.update();

@@ -6,7 +6,11 @@ public class Game {
 
   public void newGame() {
     clean();
-    level = loadLevel(this, "test");
+    level = loadLevel(this, "world");
+    player = new Player(40, 20);
+    player.level = level;
+    level.player = player;
+    level.addEntity(player);
   }
 
   public void update() {
@@ -32,6 +36,7 @@ public class Game {
 
   private Level byName(String name) {
     if(name == "test") return new TestLevel();
+    if(name == "world") return new WorldLevel();
     println("Unable to load level " + name + ": level does not exist.");
     return null;
   }
