@@ -7,6 +7,9 @@ public class Entity {
   public float w, h;
   
   public color col;
+  public int tex;
+  public int frame;
+  public boolean facingRight = true;
   
   public Level level;
   public int xTile0 = -1;
@@ -30,6 +33,8 @@ public class Entity {
 
       if (!removed) level.getTile(xTile0, yTile0).addEntity(this);
     }
+    if(this.xv < 0) facingRight = false;
+    if(this.xv > 0) facingRight = true;
   }
 
   public void remove() {

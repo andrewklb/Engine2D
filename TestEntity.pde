@@ -4,13 +4,14 @@ public class TestEntity extends Entity {
   public TestEntity(float x, float y) {
     this.x = x;
     this.y = y;
-    this.w = random(0.9,0.99);
-    this.h = random(0.9,0.99);
+    this.w = 40.0/tileSize;
+    this.h = 64.0/tileSize;
     //this.w = 2.0;
     //this.h = 2.0;
     this.xv = 0.0;
     this.yv = 0.0;
     this.col = #FF0000;
+    this.frame = 0;
   }
   
   public void update() {

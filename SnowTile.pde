@@ -11,7 +11,7 @@ public class SnowTile extends Tile {
     if(level.getTile(x+1,y) instanceof SnowTile) right = true;
     if(level.getTile(x,y-1) instanceof SnowTile) up = true;
     if(level.getTile(x,y+1) instanceof SnowTile) down = true;
-    if(up) tex = 5;
+    if(up) tex = int(random(5,10));
     if(!up && left && right) tex = int(random(1,4));
     if(!up && left && !right) tex = 4;
     if(!up && !left && right) tex = 0;

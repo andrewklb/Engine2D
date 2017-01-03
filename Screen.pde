@@ -4,7 +4,8 @@ public class Screen {
   }
   
   public void update(Game game) {
-    background(0);
+    //background(0);
+    image(res.get("background"),width/2,height/2);
     float camx = game.player.x;
     float camy = game.player.y;
     //float camx = mouseX;
@@ -29,8 +30,12 @@ public class Screen {
     
     for (int i = 0; i < game.level.entities.size(); i++) {
       Entity e = game.level.entities.get(i);
-      fill(e.col);
-      rect((e.x-camx+(width/2/(tileSize)))*tileSize,(e.y-camy+(height/2/(tileSize)))*tileSize,ceil(e.w*tileSize),ceil(e.h*tileSize));
+      int spritex = int((e.x-camx+(width/2/tileSize))*tileSize);
+      int spritey = int((e.y-camy+(height/2/tileSize))*tileSize);
+      PImage icon = spriteSheet[e.tex+e.frame];
+      image(icon, spritex, spritey);
+      //fill(e.col);
+      //rect(,,ceil(e.w*tileSize),ceil(e.h*tileSize));
     }
   }
   

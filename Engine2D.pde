@@ -2,12 +2,12 @@ public HashMap<String, PImage> res = new HashMap<String, PImage>();
 
 public boolean[] keys = new boolean[10];
 
-public PImage[] playerSheet;
+public PImage[] spriteSheet;
 public PImage[] tileSheet;
+public PImage[] backdropSheet;
 
 
 public int tileSize = 32;
-public int playerSize = 16;
 
 public Game game;
 public Screen screen;
@@ -20,8 +20,9 @@ void setup() {
   imageMode(CENTER);
   load("Test.png");
   load("World.png");
-  playerSheet = loadSheet("player.png", playerSize);
-  tileSheet = loadSheet("SnowTiles.png", tileSize);
+  load("Background.png");
+  spriteSheet = loadSheet("Sprites.png", 48, 64);
+  tileSheet = loadSheet("SnowTiles.png", tileSize, tileSize);
   
   game = new Game();
   screen = new Screen(width,height);
@@ -40,14 +41,14 @@ void load(String name) {
   res.put(split(name, ".")[0].toLowerCase(), image);
 }
 
-PImage[] loadSheet(String name, int size) {
+PImage[] loadSheet(String name, int wid, int hig) {
   PImage sheet = loadImage(name);
-  int w = sheet.width/size;
-  int h = sheet.height/size;
+  int w = sheet.width/wid;
+  int h = sheet.height/hig;
   PImage[] icons = new PImage[w*h];
   for(int y = 0; y < h; y++) {
     for(int x = 0; x < w; x++) {
-      PImage icon = sheet.get(x*size,y*size,size,size);
+      PImage icon = sheet.get(x*wid,y*hig,wid,hig);
       icons[x+y*w] = icon;
     }
   }
